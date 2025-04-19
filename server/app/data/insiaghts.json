@@ -1,0 +1,14 @@
+[
+    {
+        "diagnostic_id": "a17878df-4a0c-416b-a6ba-be6d42d372d2",
+        "created_at": "2025-04-17T12:00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    },
+    {
+        "diagnostic_id": "3b686b51-6d90-426e-8384-b9cfeca5d692",
+        "created_at": "2025-04-17T12:00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    }
+]
