@@ -196,5 +196,41 @@
         "created_at": "2025-04-02T00:00:00+00:00",
         "type": "bearing",
         "severity": "critical"
+    },
+    {
+        "diagnostic_id": "beee4305-b31f-4648-aa29-9b81001d9b91",
+        "created_at": "2025-04-17T00:00:00+00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    },
+    {
+        "diagnostic_id": "0e143b51-4a72-444d-b19c-116c264ae62a",
+        "created_at": "2025-04-20T00:00:00+00:00",
+        "type": "motor",
+        "severity": "critical"
+    },
+    {
+        "diagnostic_id": "dbf58325-47bd-4f83-a7be-73901d933d2b",
+        "created_at": "2025-04-17T12:00:00+00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    },
+    {
+        "diagnostic_id": "0ce27c6b-70e0-4b68-8cec-5362fe17375f",
+        "created_at": "2025-04-17T12:00:00+00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    },
+    {
+        "diagnostic_id": "520adbdd-01ea-45e8-a25a-0031f752e190",
+        "created_at": "2025-04-17T12:00:00+00:00",
+        "type": "bearing",
+        "severity": "alarm"
+    },
+    {
+        "diagnostic_id": "72005cb0-9099-4636-8586-ce8958235a1c",
+        "created_at": "2025-04-17T12:00:00+00:00",
+        "type": "bearing",
+        "severity": "alarm"
     }
 ]

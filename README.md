@@ -19,7 +19,6 @@ Diagnostics-Dashboard/
 
 - **Node.js** (v18+ recommended) and npm
 - **Python** (v3.10+ recommended)
-- (Optional) **pipenv** or **venv** for Python virtual environments
 
 ---
 
@@ -30,34 +29,26 @@ Diagnostics-Dashboard/
 Navigate to the backend directory:
 
 ```powershell
-cd server/app
-pip install fastapi uvicorn pytest
-```
-
-Or, if you use a virtual environment:
-
-```powershell
-python -m venv venv
-.\venv\Scripts\activate
+cd server
 pip install fastapi uvicorn pytest
 ```
 
 ### 2. Run the backend server
 
-From `server/app`:
+From `server`:
 
 ```powershell
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 The API will be available at [http://localhost:8000](http://localhost:8000).
 
 ### 3. Run backend tests
 
-From `server/app`:
+From `server`:
 
 ```powershell
-pytest
+pytest app/test_routers.py
 ```
 
 ---
@@ -100,8 +91,8 @@ The app will be available at the URL shown in the terminal (usually [http://loca
 
 ### Backend
 
-- `uvicorn main:app --reload` — Start FastAPI server
-- `pytest` — Run backend tests
+- `uvicorn app.main:app --reload` — Start FastAPI server
+- `pytest app/test_routers.py` — Run backend tests
 
 ### Frontend
 

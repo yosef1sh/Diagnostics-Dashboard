@@ -12,7 +12,7 @@ def test_healthcheck():
 
 def test_create_and_get_insight():
     payload = {
-        "created_at": "2025-04-17T12:00:00",
+        "created_at": "2025-04-17T12:00:00Z",
         "type": "bearing",
         "severity": "alarm"
     }
@@ -20,19 +20,19 @@ def test_create_and_get_insight():
     assert post_response.status_code == 200
     assert "diagnostic_id" in post_response.json()
 
-    get_response = client.get("/insights", params={"from_date": "2025-04-17T00:00:00"})
+    get_response = client.get("/insights", params={"from_date": "2025-04-17T00:00:00Z"})
     assert get_response.status_code == 200
     insights = get_response.json()
     assert any(i["created_at"] == payload["created_at"] and i["type"] == payload["type"] and i["severity"] == payload["severity"] for i in insights)
 
 def test_get_insights_empty():
-    response = client.get("/insights", params={"from_date": "2100-01-01T00:00:00"})
+    response = client.get("/insights", params={"from_date": "2100-01-01T00:00:00Z"})
     assert response.status_code == 200
     assert response.json() == []
 
 def test_create_insight_invalid_type():
     payload = {
-        "created_at": "2025-04-17T12:00:00",
+        "created_at": "2025-04-17T12:00:00Z",
         "type": "invalid_type",
         "severity": "alarm"
     }
@@ -41,7 +41,7 @@ def test_create_insight_invalid_type():
 
 def test_create_insight_invalid_severity():
     payload = {
-        "created_at": "2025-04-17T12:00:00",
+        "created_at": "2025-04-17T12:00:00Z",
         "type": "bearing",
         "severity": "not_a_severity"
     }
