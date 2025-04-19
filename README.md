@@ -110,6 +110,7 @@ The app will be available at the URL shown in the terminal (usually [http://loca
 - Data is stored in JSON files under `server/app/data/`.
 - You can customize the API endpoints in `server/app/routers/routers.py`.
 - The frontend uses TailwindCSS for styling and Recharts for data visualization.
+- The diagnostics table features infinite scroll functionality for improved performance with large datasets.
 
 ---
 
