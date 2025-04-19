@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Diagnostic, SelectOption, Severity } from "../types/diagnostic";
+import { Diagnostic, SelectOption, Severity } from "../types";
 
 export function groupDiagnosticsByDate(data: Diagnostic[]) {
   return data.reduce((acc, diagnostic) => {

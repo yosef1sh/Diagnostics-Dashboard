@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { DiagnosticsTableProps } from './types/diagnostic';
+import { DiagnosticsTableProps } from './types';
 
 export const DiagnosticsTable: React.FC<DiagnosticsTableProps> = ({ groupedDiagnostics, loading }) => {
   const [visibleCount, setVisibleCount] = useState(10);

@@ -1,7 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Diagnostic, Severity } from './types/diagnostic';
+import { Diagnostic, Severity } from './types';
 import React, { useMemo } from 'react';
-import { getSeverityColor, getSeverityValue, processTrendDataFromGrouped } from './utils/diagnosticUtils';
+import { getSeverityColor, getSeverityValue, processTrendDataFromGrouped } from './utils';
 import CustomTooltip from '../../components/CustomTooltip';
 
 

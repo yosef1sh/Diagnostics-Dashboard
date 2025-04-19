@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Diagnostic, DiagnosticCreate } from '../features/diagnostics/types/diagnostic';
+import { Diagnostic, DiagnosticCreate } from '../features/diagnostics/types';
 import { createDiagnostic, fetchDiagnostics } from '../api';
 
 export function useDiagnostics(initialFromDate: string) {

@@ -1,4 +1,4 @@
-import { Diagnostic, DiagnosticCreate } from "../features/diagnostics/types/diagnostic";
+import { Diagnostic, DiagnosticCreate } from "../features/diagnostics/types";
 
 const API_URL = 'http://localhost:8000';
 

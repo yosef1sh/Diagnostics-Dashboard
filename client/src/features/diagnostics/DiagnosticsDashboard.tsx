@@ -4,9 +4,9 @@ import { FusionTrendGraph } from './FusionTrendGraph';
 import { DiagnosticsTable } from './DiagnosticsTable';
 import { AddDiagnosticForm } from './AddDiagnosticForm';
 import { Plus } from 'lucide-react';
-import { DiagnosticCreate } from './types/diagnostic';
+import { DiagnosticCreate } from './types';
 import Modal from '../../components/Modal';
-import { groupDiagnosticsByDate } from './utils/diagnosticUtils';
+import { groupDiagnosticsByDate } from './utils';
 
 const DEFAULT_FROM_DATE = '2025-04-01T18:47:40.387Z';
 

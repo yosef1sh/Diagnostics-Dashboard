@@ -1,4 +1,4 @@
-import { SelectProps } from "../features/diagnostics/types/diagnostic";
+import { SelectProps } from "../features/diagnostics/types";
 
 export function Select<T extends string>({
   name,

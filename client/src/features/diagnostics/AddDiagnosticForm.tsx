@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import { AddDiagnosticFormProps, DiagnosticCreate } from './types/diagnostic';
+import { AddDiagnosticFormProps, DiagnosticCreate } from './types';
 import { Select } from '../../components/Select';
-import { diagnosticSchema, faultTypeOptions, severityOptions } from './utils/diagnosticUtils';
+import { diagnosticSchema, faultTypeOptions, severityOptions } from './utils';
 
 
 export const AddDiagnosticForm: React.FC<AddDiagnosticFormProps> = ({ onAdd, onCancel }) => {

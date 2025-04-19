@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatePickerProps } from './types/diagnostic';
+import { DatePickerProps } from './types';
 
 export const FusionTrendDatePicker: React.FC<DatePickerProps> = ({ fromDate, setFromDate }) => (
   <div className="flex items-center">

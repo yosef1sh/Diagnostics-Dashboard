@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomTooltipProps } from '../features/diagnostics/types/diagnostic';
+import { CustomTooltipProps } from '../features/diagnostics/types';
 
 
 export const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
