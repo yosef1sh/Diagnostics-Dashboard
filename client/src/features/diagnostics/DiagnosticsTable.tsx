@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { DiagnosticsTableProps } from './types/diagnostic';
 
 export const DiagnosticsTable: React.FC<DiagnosticsTableProps> = ({ groupedDiagnostics, loading }) => {
   const [visibleCount, setVisibleCount] = useState(10);
 
-  const sortedDateKeys = Object.keys(groupedDiagnostics).sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
-  const visibleDateKeys = sortedDateKeys.slice(0, visibleCount);
+  const sortedDateKeys = useMemo(
+    () => Object.keys(groupedDiagnostics).sort((a, b) => new Date(b).getTime() - new Date(a).getTime()),
+    [groupedDiagnostics]
+  );
+  const visibleDateKeys = useMemo(
+    () => sortedDateKeys.slice(0, visibleCount),
+    [sortedDateKeys, visibleCount]
+  );
 
   useEffect(() => {
     const handleWindowScroll = () => {

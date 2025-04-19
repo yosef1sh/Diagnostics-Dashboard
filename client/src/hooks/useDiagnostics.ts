@@ -1,26 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Diagnostic, DiagnosticCreate } from '../features/diagnostics/types/diagnostic';
-
-const API_URL = 'http://localhost:8000';
-
-async function fetchDiagnostics(fromDate?: string): Promise<Diagnostic[]> {
-  const url = new URL(`${API_URL}/insights`);
-  if (fromDate) url.searchParams.append('from_date', fromDate);
-  const res = await fetch(url.toString());
-  if (!res.ok) throw new Error('Failed to fetch diagnostics');
-  return res.json();
-}
-
-
-async function createDiagnostic(data: DiagnosticCreate): Promise<{ diagnostic_id: string }> {
-  const res = await fetch(`${API_URL}/insights`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  if (!res.ok) throw new Error('Failed to create diagnostic');
-  return res.json();
-}
+import { createDiagnostic, fetchDiagnostics } from '../api';
 
 export function useDiagnostics(initialFromDate: string) {
   const [diagnostics, setDiagnostics] = useState<Diagnostic[]>([]);
@@ -45,12 +25,12 @@ export function useDiagnostics(initialFromDate: string) {
     loadDiagnostics();
   }, [loadDiagnostics]);
 
-  const addDiagnostic = async (diagnostic: DiagnosticCreate) => {
+  const addDiagnostic = useCallback(async (diagnostic: DiagnosticCreate) => {
     const result = await createDiagnostic(diagnostic);
     const newDiagnostic = { diagnostic_id: result.diagnostic_id, ...diagnostic };
     setDiagnostics((prev) => [newDiagnostic, ...prev]);
     return newDiagnostic;
-  };
+  }, []);
 
   return {
     diagnostics,

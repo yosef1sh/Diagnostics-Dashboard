@@ -1,8 +1,8 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Diagnostic, Severity } from './types/diagnostic';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { getSeverityColor, getSeverityValue, processTrendDataFromGrouped } from './utils/diagnosticUtils';
-import CustomTooltip from './CustomTooltip';
+import CustomTooltip from '../../components/CustomTooltip';
 
 
 export const FusionTrendGraph: React.FC<{
@@ -12,7 +12,7 @@ export const FusionTrendGraph: React.FC<{
   setFromDate: (date: string) => void;
 }> = ({ groupedDiagnostics, loading, fromDate, setFromDate }) => {
 
-  const trendData = processTrendDataFromGrouped(groupedDiagnostics);
+  const trendData = useMemo(() => processTrendDataFromGrouped(groupedDiagnostics), [groupedDiagnostics]);
   return (
     <div className="mb-8 bg-gray-100 rounded-lg shadow p-4">
       <div className="flex justify-between items-center mb-4">
