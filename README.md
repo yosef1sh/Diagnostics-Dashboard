@@ -1,6 +1,5 @@
 # Diagnostics Dashboard
 
-[Watch the Project Demo on YouTube](https://youtu.be/0CQukrB_WMY)
 
 A full-stack application for managing and visualizing diagnostics insights, built with FastAPI (Python) for the backend and React (Vite + TypeScript + TailwindCSS) for the frontend.
 
